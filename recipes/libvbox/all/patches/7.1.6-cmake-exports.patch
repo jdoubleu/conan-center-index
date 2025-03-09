@@ -1,0 +1,23 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -53,11 +53,6 @@ configure_file(
+
+ add_library(vbox SHARED "")
+
+-if(MSVC)
+-    # Keep the "libvbox" name even on MSVC
+-    set_target_properties(vbox PROPERTIES PREFIX "lib")
+-endif()
+-
+ target_include_directories(vbox
+     PUBLIC
+         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+@@ -245,8 +240,6 @@ endif()
+
+ install(TARGETS vbox
+     EXPORT vbox-targets
+-    RUNTIME DESTINATION bin COMPONENT shlib
+-    LIBRARY DESTINATION lib COMPONENT shlib
+ )
+ install(
+     FILES

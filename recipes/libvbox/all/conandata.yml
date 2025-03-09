@@ -1,0 +1,14 @@
+sources:
+  "7.1.6":
+    url: "https://github.com/zrax/libvbox/archive/bf5788fe940a00c0549af8c49929cc7b024eaaf9.zip"
+    sha256: 92ecbc65beef60aa74e138d2f6ecb0e3f8a6d3dd130ef22764da6a40b150f148
+# The VirtualBox SDK can be obtained from https://www.virtualbox.org/wiki/Downloads
+vbox_sdk:
+  "7.1.6":
+    url: "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBoxSDK-7.1.6-167084.zip"
+    sha256: "3762fbd3606a748d7c5734cb02b346ec31a5aae1314bc6a68cbad2e35e2d62db"
+patches:
+  "7.1.6":
+    - patch_file: "patches/7.1.6-cmake-exports.patch"
+      patch_type: "conan"
+      patch_description: "use default naming scheme for library"
